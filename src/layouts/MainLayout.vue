@@ -1,7 +1,6 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <Navbar />
-
     <q-page-container>
       <router-view />
     </q-page-container>
