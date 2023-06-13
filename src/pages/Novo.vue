@@ -60,6 +60,7 @@ export default {
       )
 
       if (result.errors) {
+        console.log(result)
         if (result.errors.brand) this.form.brand.error = result.errors.brand[0]
         if (result.errors.model) this.form.model.error = result.errors.model[0]
         if (result.errors.color) this.form.color.error = result.errors.color[0]
