@@ -10,7 +10,17 @@ export async function fetchCarros ({ commit }) {
 }
 
 export async function createCarro ({ commit }, { brand, model, color, year }) {
+  const form = new FormData()
+  form.set('brand', brand)
+  form.set('model', model)
+  form.set('color', color)
+  form.set('year', year)
 
+  const result = await axios.post('http://localhost:8000/api/cars', form)
+    .then(result => result.data)
+    .catch(response => response.response.data)
+
+  return result
 }
 
 export async function updateCarro ({ commit }, id, { brand, model, color, year }) {
